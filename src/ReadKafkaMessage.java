@@ -29,8 +29,6 @@ public class ReadKafkaMessage implements Runnable {
 
 
 
-
-
     public ReadKafkaMessage(KafkaStream a_stream, int a_threadNumber){
         threadNumber = a_threadNumber;
         stream = a_stream;
@@ -56,6 +54,8 @@ public class ReadKafkaMessage implements Runnable {
                     out.flush();
 
             }
+
+            // close Output stream and socket when there are no more messages in Kafka Stream.
             out.close ();
             msgSocket.close ();
         } catch (IOException e) {

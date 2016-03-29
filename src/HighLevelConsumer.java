@@ -47,6 +47,7 @@ public class HighLevelConsumer {
         }
     }
 
+    // Defining object configurations.
     private static ConsumerConfig createConsumerConfig() {
         Properties props = new Properties();
         props.put("zookeeper.connect", KafkaConsumerConfig.ZOOKEEPER);
@@ -59,10 +60,7 @@ public class HighLevelConsumer {
     }
 
     public static void main(String[] args) {
-       // String zooKeeper = KafkaConsumerConfig.ZOOKEEPER;
-       // String groupId = KafkaConsumerConfig.GROUP_ID;
-       // String topic = args[2];
-        int threads = Integer.parseInt(args[3]);
+        int threads = KafkaConsumerConfig.NUMBER_OF_THREADS;
 
         HighLevelConsumer example = new HighLevelConsumer();
         example.run(threads);
@@ -77,6 +75,7 @@ public class HighLevelConsumer {
 
 
 
+    // Shutdown threads when they are inactive for some time.
     public void shutdown() {
         if (consumer != null) consumer.shutdown();
         if (executor != null) executor.shutdown();

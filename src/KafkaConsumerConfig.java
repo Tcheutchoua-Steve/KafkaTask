@@ -24,10 +24,9 @@ public class KafkaConsumerConfig {
 
 
 
+
     /******************************************************************************************************************/
     /*********************************  Configurations  For Sending Messages   ****************************************/
-
-
     public static final String MESSAGE_HOST = "localhost";
     public static final int MESSAGE_HOST_PORT = 6060;
     public static final int MESSAGE_HOST_PORT2 = 6070;
