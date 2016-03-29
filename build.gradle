@@ -1,0 +1,16 @@
+group 'org.apache.kafka'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile group: 'org.apache.kafka', name: 'kafka_2.8.2', version: '0.8.1'
+}
